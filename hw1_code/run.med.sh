@@ -25,7 +25,7 @@ for event in P001 P002 P003; do
   # output the score of each testing video to a file ${event}_pred 
   python scripts/test_svm.py mfcc_pred/svm.$event.model "kmeans/" $feat_dim_mfcc mfcc_pred/${event}_pred || exit 1;
   # compute the average precision by calling the mAP package
-  ap list/${event}_test_label mfcc_pred/${event}_pred
+  ap list/${event}_val_label mfcc_pred/${event}_pred
 done
 
 echo ""
@@ -43,6 +43,6 @@ for event in P001 P002 P003; do
   # output the score of each testing video to a file ${event}_pred 
   python scripts/test_svm.py asr_pred/svm.$event.model "asrfeat/" $feat_dim_asr asr_pred/${event}_pred || exit 1;
   # compute the average precision by calling the mAP package
-  ap list/${event}_test_label asr_pred/${event}_pred
+  ap list/${event}_val_label asr_pred/${event}_pred
 done
 

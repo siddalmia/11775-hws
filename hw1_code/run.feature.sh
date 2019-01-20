@@ -26,7 +26,8 @@ mkdir -p audio mfcc kmeans
 #    Refer to Section 2.5 of this document http://web.stanford.edu/class/cs224s/hw/openSMILE_manual.pdf for better configuration
 #    (e.g., normalization) and other feature types (e.g., PLPs )     
 cat list/train | awk '{print $1}' > list/train.video
-cat list/train.video list/test.video > list/all.video
+cat list/val | awk '{print $1}' > list/val.video
+cat list/train.video list/val.video list/test.video > list/all.video
 for line in $(cat "list/all.video"); do
     ffmpeg -y -i $video_path/${line}.mp4 -ac 1 -f wav audio/$line.wav
     SMILExtract -C config/MFCC12_0_D_A.conf -I audio/$line.wav -O mfcc/$line.mfcc.csv
