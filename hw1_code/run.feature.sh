@@ -7,7 +7,7 @@
 # your own setups.
 
 # Paths to different tools; 
-opensmile_path=/home/ubuntu/tools/openSMILE-2.3.0/inst
+opensmile_path=/home/ubuntu/tools/opensmile-2.3.0/inst
 export PATH=$opensmile_path/bin:$PATH
 export LD_LIBRARY_PATH=$opensmile_path/lib:$LD_LIBRARY_PATH
 
