@@ -12,7 +12,7 @@ import pdb
 
 def get_surf_features_from_video(downsampled_video_filename, surf_feat_video_filename, keyframe_interval):
     "Receives filename of downsampled video and of output path for features. Extracts features in the given keyframe_interval. Saves features in pickled file."
-
+    # TODO
     pass
 
 
